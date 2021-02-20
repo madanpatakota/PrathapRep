@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FirstPro';
+
+  name ="testmadan";
+
+  Click(updatedName){
+    console.log(updatedName);  
+  }
+
+
 }
