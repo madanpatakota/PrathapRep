@@ -1,0 +1,74 @@
+<!-- 
+ <textarea rows="5" placeholder="Address" class="form-control" 
+ (keyup)="updateAdress($event)"></textarea> -->
+
+
+<app-employee 
+[custDetails]="employetablerow"
+(onAddCustomer) = "CustomerAdded($event)">
+</app-employee>
+
+
+<!-- Here custDetails is the property of the empolyee component  -->
+<!-- employetablerow is the property of the employyes component -->
+
+
+
+<div style="margin-top: 1em;">
+    <h4>Employee List :</h4>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>EID</th>
+                    <th>EmployeeFirstName</th>
+                    <th>EmployeeLastName</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let tableRow of EmployeeRows">
+                    <td>
+                        {{tableRow.EID}}
+                    </td>
+                    <td>
+                        {{tableRow.EmpFName}}
+                    </td>
+                    <td>
+                        {{tableRow.EmpLName}}
+                    </td>
+                    <td>
+                        <input type="button" (click)="evtCustomerSelect(tableRow)" class="btn btn-primary"
+                            value="Select">
+                    </td>
+
+                </tr>
+
+
+                <!-- <tr>
+            <td>
+                1
+            </td>
+            <td>
+                John
+            </td>
+            <td>
+                smith
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                Michael
+            </td>
+            <td>
+                Van
+            </td>
+        </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

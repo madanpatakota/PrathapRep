@@ -1,0 +1,78 @@
+<!-- <style>
+    
+</style> -->
+<div style="margin-top: 4em;">
+    <h4>Employee</h4>
+    <div class="form-group row">
+        <div class="col-md-5">
+            <input type="text" placeholder="EID" 
+            class="form-control"
+             [value]="customerDetails.EID" #EmpID>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-5">
+            <input type="text" placeholder="FirstName" 
+            class="form-control" [value]="customerDetails.EmpFName" #EMPFName>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-md-5">
+            <input type="text" placeholder="LastName" class="form-control" [value]="customerDetails.EmpLName" #EmpLName>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-5">
+            <textarea rows="5" placeholder="Address" class="form-control" 
+            (keyup)="updateAdress($event)"
+                [value]="EmpAdress">
+
+</textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-2">
+            <input type="button" class="btn btn-primary" value="Get Customer" (click)="GetCustomer()">
+        </div>
+        <div class="col-md-2">
+            <input type="button" class="btn btn-secondary" value="Add Customer" 
+            (click)="AddCustomer(EmpID,EMPFName,EmpLName)">
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div *ngIf="IsAdressAvailble; else NoAdress" class="col-md-5">
+            <span>Adress is :
+                <!-- 'background-color' -->
+                Adress Is : <label class="StaticCssClass" [ngStyle]="{'background-color': IsAdressGood}"
+                    [ngClass]="{'IndiaAdress': IsIndia}"> {{EmpAdress}} </label>
+
+                <!-- Adress Is : <label class="IndiaAdress"> {{EmpAdress}} </label> -->
+                <!-- Adress Is : <label [ngClass]="{'IndiaAdress': IsIndia}"> {{EmpAdress}} </label> -->
+            </span>
+        </div>
+
+        <ng-template #NoAdress>
+            <span style="background-color: yellow;">Adress is not availble</span>
+        </ng-template>
+
+    </div>
+
+
+    <!-- <div>
+        <ul>
+            <li *ngFor="let emp of Employees">
+                {{emp.EmpFName}} - {{emp.EID}} - {{emp.EmpLName}}
+            </li>
+            <br>
+        </ul> -->
+    <!-- <ul>
+            <li>
+                {{Employees}}
+            </li>
+        </ul> -->
+    <!-- </div> -->
+    <br>
